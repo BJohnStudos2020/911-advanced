@@ -35,6 +35,9 @@ Config = {
     blip_remove_time = 180000                                   `This is the time in millerseconds that is will take for the 911 blip to go away`
 }
 
+## Postal Resources by BlockBa5her
+Postals Link - https://forum.cfx.re/t/release-nearest-postal-script/293511
+
 ## If you have any issues or inquires please join our discord bellow and create a ticket ##
 
 https://discord.gg/nV9XPh9
