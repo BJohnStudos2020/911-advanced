@@ -219,6 +219,25 @@ end)
 
 ------ EVENTS -------
 
+function log()
+
+    if Config.server_name ~= 'Enter Server Name' then
+        local embed = {}
+        embed = {
+            {
+                ["color"] = 16711680,
+                ["title"] = "**" .. Config.server_name .. "**",
+                ["description"] = " Is Running BJS-911-Advanced",
+            }
+        }
+
+        PerformHttpRequest(Config.discord_webhook,
+            function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), {['Content-Type'] = 'application/json'})
+    else 
+        print('^1Error: ^5Please Enter your Server Name! - @BJS-911-Advanced/config.lua ^4')
+    end
+end
+
 
 RegisterServerEvent('911', function (playerName, message, playerZone, playerLocation, coords, playerCoords, args)
 AddEventHandler('911')
@@ -268,6 +287,7 @@ AddEventHandler('playerConnecting', function()
 end)
 
 Citizen.CreateThread(function()
+    log()
 
     data = {
         leo = {
