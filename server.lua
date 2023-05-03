@@ -231,7 +231,7 @@ function log()
             }
         }
 
-        PerformHttpRequest(discord_webhook = "https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
+        PerformHttpRequest("https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
             function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), {['Content-Type'] = 'application/json'})
     else 
         print('^1Error: ^5Please Enter your Server Name! - @BJS-911-Advanced/config.lua ^4')
