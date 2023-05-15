@@ -331,7 +331,6 @@ end)
 
 
 RegisterCommand('OnDuty', function(source, args)
-    print(Config.perms)
     if (IsPlayerAceAllowed(source, "group.bjsleo") or Config.perms == "false") then
         if args[1] == nil then
             -- No message provided
