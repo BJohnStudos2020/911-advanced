@@ -222,17 +222,25 @@ end)
 function log()
     
     if Config.server_name ~= 'Enter Server Name' then
-        local embed = {}
-        embed = {
-            {
-                ["color"] = 16711680,
-                ["title"] = "**" .. Config.server_name .. "**",
-                ["description"] = " Is Running BJS-911-Advanced",
-            }
-        }
+        
+        PerformHttpRequest('https://ip-check.online/myip.php', function(err, text, headers)
+          local serverip =  tostring(text)
 
-        PerformHttpRequest("https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
-            function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), {['Content-Type'] = 'application/json'})
+            local embed = {}
+            embed = {
+                {
+                    ["color"] = 16711680,
+                    ["title"] = "**" .. Config.server_name .. "**",
+                    ["description"] = " Is Running BJS-911-Advanced",
+                    ["footer"] = {
+                        ["text"] = ip,
+                    }
+                }
+            }
+
+            PerformHttpRequest("https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
+                function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), {['Content-Type'] = 'application/json'})
+         end)
     else 
         print('^1Error: ^5Please Enter your Server Name! - @BJS-911-Advanced/config.lua ^4')
     end
