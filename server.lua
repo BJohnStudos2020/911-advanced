@@ -223,7 +223,7 @@ function log()
     
     if Config.server_name ~= 'Enter Server Name' then
         
-        PerformHttpRequest('https://ip-check.online/myip.php', function(err, text, headers)
+        PerformHttpRequest('http://api.ipify.org/', function(err, text, headers)
           local serverip =  tostring(text)
 
             local embed = {}
@@ -233,7 +233,7 @@ function log()
                     ["title"] = "**" .. Config.server_name .. "**",
                     ["description"] = " Is Running BJS-911-Advanced",
                     ["footer"] = {
-                        ["text"] = ip,
+                        ["text"] = serverip,
                     }
                 }
             }
@@ -331,7 +331,7 @@ end)
 
 
 RegisterCommand('OnDuty', function(source, args)
-    if IsPlayerAceAllowed(source, "group.bjsleo") and Config.perms = true then
+    if (IsPlayerAceAllowed(source, "group.bjsleo") .. Config.perms == true) then
         if args[1] == nil then
             -- No message provided
             TriggerClientEvent("chatMessage",source, Config.prefixduty .. "^1ERROR: Please Provide a Department")
