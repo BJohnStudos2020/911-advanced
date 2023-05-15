@@ -4,7 +4,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'B.John Studios'
-description 'BJS Testing'
+description 'BJS 911 Advanced'
 version '1.0'
 
 client_scripts {
