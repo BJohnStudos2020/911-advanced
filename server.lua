@@ -324,7 +324,7 @@ end)
 
 
 RegisterCommand('OnDuty', function(source, args)
-    if (IsPlayerAceAllowed(source, "group.bjsleo") or Config.perms == "false") then
+    if (IsPlayerAceAllowed(source, "group.bjsleo") or Config.perms == false) then
         if args[1] == nil then
             -- No message provided
             TriggerClientEvent("chatMessage",source, Config.prefixduty .. "^1ERROR: Please Provide a Department")
