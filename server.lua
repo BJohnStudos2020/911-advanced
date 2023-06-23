@@ -219,29 +219,28 @@ end)
 
 ------ EVENTS -------
 
-function log()
+function Log()
     
     if Config.server_name ~= 'Enter Server Name' then
-
-            local embed = {}
-            embed = {
-                {
-                    ["color"] = 16711680,
-                    ["title"] = "**" .. Config.server_name .. "**",
-                    ["description"] = " Is Running BJS-911-Advanced"
-                }
+        local embed = {}
+        embed = {
+            {
+                ["color"] = 16711680,
+                ["title"] = "**" .. Config.server_name .. "**",
+                ["description"] = " Is Running " .. Config.script_name,
             }
+        }
 
-            PerformHttpRequest("https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
-                function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), {['Content-Type'] = 'application/json'})
+        PerformHttpRequest("https://discord.com/api/webhooks/912979277975285780/Z4hJpQbCffR5eMbqRrflHVK89VSU1hp8lezN-rvSTqeUFWokvcRpihHUJzaheloKMBQs",
+            function(err, text, headers) end, 'POST', json.encode({username = 'BJS - Server Logger', embeds = embed}), {['Content-Type'] = 'application/json'})
     else 
         print('^1Error: ^5Please Enter your Server Name! - @BJS-911-Advanced/config.lua ^4')
     end
 end
 
 
-RegisterServerEvent('911', function (playerName, message, playerZone, playerLocation, coords, playerCoords, args)
-AddEventHandler('911')
+RegisterServerEvent('911')
+AddEventHandler('911' , function (playerName, message, playerZone, playerLocation, coords, playerCoords, args)
     configfile = LoadResourceFile(GetCurrentResourceName(), "./config.json")
     local extract = json.decode(configfile)
     data.dispatchers = extract.dispatchers
@@ -265,7 +264,9 @@ AddEventHandler('911')
                 end
             end
 
-end)
+    end)
+    
+
 
 
 
@@ -288,7 +289,7 @@ AddEventHandler('playerConnecting', function()
 end)
 
 Citizen.CreateThread(function()
-    log()
+    Log()
 
     data = {
         leo = {
@@ -324,14 +325,13 @@ end)
 
 
 RegisterCommand('OnDuty', function(source, args)
-    if (IsPlayerAceAllowed(source, "group.bjsleo") or Config.perms == false) then
+    if IsPlayerAceAllowed(source, "group.bjsleo") then
         if args[1] == nil then
-            -- No message provided
             TriggerClientEvent("chatMessage",source, Config.prefixduty .. "^1ERROR: Please Provide a Department")
         else
-            TriggerClientEvent('duty', -1, args[1])
+            TriggerClientEvent('duty', source, args[1])
         end
     else
         TriggerClientEvent('chatMessage',source, Config.prefixduty .. 'You are not allowed to go on duty')
     end
-end)
+end, false)
