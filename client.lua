@@ -87,7 +87,6 @@ RegisterCommand("911", function(source, args)
             local message = table.concat(args, " ")
             local playerName = GetPlayerName(PlayerId())
             local playerCoords = GetEntityCoords(GetPlayerPed(PlayerId()))
-            local playerStreet = GetStreetNameFromHashKey(playerCoords.x, playerCoords.y, playerCoords.z)
             local playerZone = GetLabelText(GetNameOfZone(playerCoords.x, playerCoords.y, playerCoords.z))
             local playerLocation = _code
             TriggerEvent("chat:addMessage", Config.prefix911 .. "911 | Whats your Emergancy?")
@@ -102,7 +101,9 @@ RegisterCommand("911", function(source, args)
     else
         TriggerEvent("chat:addMessage", Config.prefix911 .. "^2Sorry there is no [LEO/Fire/Medics] online at the momemt")
     end
-end)
+end, false)
+
+
 RegisterNetEvent('duty')
 AddEventHandler('duty', function(args)
     if args == 'Dispatch' then
@@ -123,7 +124,7 @@ RegisterCommand('OffDuty', function(source, args)
     local playerID = GetPlayerServerId(PlayerId())
     local playerName = GetPlayerName(PlayerId())
     TriggerServerEvent('offduty',  playerName, targetPlayer, playerID)
-end)
+end, false)
 
 -- Draw the active LEO count on the screen
 Citizen.CreateThread(function()
@@ -148,7 +149,6 @@ Citizen.CreateThread(function()
         SetTextFont(4)
         SetTextScale(0.5, 0.5)
         SetTextColour(255, 255, 255, 255)
-        SetTextDropShadow(0, 0, 0, 0,255)
         SetTextEdge(4, 0, 0, 0, 255)
         SetTextEntry('STRING')
         SetTextOutline()
@@ -158,9 +158,9 @@ Citizen.CreateThread(function()
     end
 end)
 
-postals = nil
+local postals = nil
 Citizen.CreateThread(function()
-    postals = LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), 'postal_file'))
+    postals = LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), 'postal_file', 23))
     postals = json.decode(postals)
     for i, postal in ipairs(postals) do postals[i] = { vec(postal.x, postal.y), code = postal.code } end
 end)
