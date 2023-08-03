@@ -69,7 +69,7 @@ Config = {
 
 ## Images
 
-![Alt text](image.png)
+![GTA5 MAP](GTA5-MAP.png)
 
 ## Postal Resources by BlockBa5her
 Postals Link - https://forum.cfx.re/t/release-nearest-postal-script/293511
