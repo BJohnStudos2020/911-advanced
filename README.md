@@ -1,8 +1,5 @@
 ## B.John Studios Advanced 911 Script ##
 
-### Youtube Video - https://youtu.be/9Qnyz2egqrE
-
-
 `INFO and commands` 
 This is a Advanced FiveM 911 script that allows for leo / dispatch to go on duty and receive 911 calls and caller proximity, which is ace perm restircted
 
@@ -70,10 +67,12 @@ Config = {
 ## Images
 
 ![GTA5 MAP](GTA5-MAP.png)
+![DUTY TOGGLE](GTA5-DUTYTOGGLE.png)
+![NOTIFICATION](GTA5-NOTIFICATION.png) 
 
 ## Postal Resources by BlockBa5her
 Postals Link - https://forum.cfx.re/t/release-nearest-postal-script/293511
 
-## If you have any issues or inquires please join our discord bellow and create a ticket ##
+## If you have any issues or inquires please join our discord bellow and create a ticket
 
 https://discord.gg/nV9XPh9
