@@ -29,6 +29,8 @@ add_ace group.leo group.bjsleo allow
 add_ace group.leo command.bjsleo allow
 ```
 
+#### You will need to adujst the config file to the required vector3 coordinates that your server uses.
+
 
 ##  [Config] ##
 ```elixir
@@ -39,6 +41,9 @@ Config = {
     blip_remove_time = 180000, -- This is the time in millerseconds that is will take for the 911 blip to go away
     perms = false,    -- Change this to true if your using in game ace_perms
     script_name = 'BJS-911-Advanced',
+
+    -- Adjust Coordinates as needed
+    
     PD_Locations = {
         vector3(1859.106, 3693.682, 34.267), -- Sandy Shores
         vector3(1690.548, 4855.421, 42.296),  -- Grapeseed
@@ -61,6 +66,10 @@ Config = {
     }
 }
 ```
+
+## Images
+
+![Alt text](image.png)
 
 ## Postal Resources by BlockBa5her
 Postals Link - https://forum.cfx.re/t/release-nearest-postal-script/293511
