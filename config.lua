@@ -3,11 +3,11 @@
 ---------------------------------------------
 
 Config = {
-    server_name = 'Enter Server Name',
+    server_name = 'Enter Server Name', -- Change this to your server name if your wanting to
     prefix911 = "^4[911] ^3",
     prefixduty = "^4[BJS-Duty] ^3",
-    blip_remove_time = 180000,
-    perms = false,
+    blip_remove_time = 180000, -- This is the time in millerseconds that is will take for the 911 blip to go away
+    perms = false,    -- Change this to true if your using in game ace_perms
     script_name = 'BJS-911-Advanced',
     PD_Locations = {
         vector3(1859.106, 3693.682, 34.267), -- Sandy Shores
