@@ -68,7 +68,8 @@ Config = {
 
 ![GTA5 MAP](GTA5-MAP.png)
 ![DUTY TOGGLE](GTA5-DUTYTOGGLE.png)
-![NOTIFICATION](GTA5-NOTIFICATION.png) 
+![NOTIFICATION](GTA5-NOTIFICATION.png)
+![NOTIFICATION LEO](GTA5-NOTIFICATION-LEO.png)
 
 ## Postal Resources by BlockBa5her
 Postals Link - https://forum.cfx.re/t/release-nearest-postal-script/293511
