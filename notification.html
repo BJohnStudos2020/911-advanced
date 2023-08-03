@@ -1,0 +1,33 @@
+<style>
+    #notification {
+        position: fixed;
+        top: 50%;
+        left: -300px;
+        width: 300px;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-family: Arial;
+        font-size: 16px;
+        padding: 10px;
+        transition: left 0.5s ease-in-out;
+    }
+</style>
+
+<div id="notification">
+    <h1>HTML Notification</h1>
+    <p>This is an example of an HTML notification.</p>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const notification = document.getElementById('notification');
+
+        setTimeout(() => {
+            notification.style.left = '-300px';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 500);
+        }, 5000);
+    });
+</script>

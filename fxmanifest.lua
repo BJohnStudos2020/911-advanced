@@ -5,7 +5,7 @@ game 'gta5'
 
 author 'B.John Studios'
 description 'BJS 911 Advanced'
-version '1.0'
+version '2.0'
 
 client_scripts {
 	'client.lua',
@@ -17,6 +17,12 @@ server_scripts {
 
 shared_scripts {
     "config.lua"
+}
+
+ui_page 'html/index.html'
+
+files {
+	'html/*.*'
 }
 
 file(postalFile)
